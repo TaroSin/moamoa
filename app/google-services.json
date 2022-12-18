@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "54991817035",
+    "project_id": "emp-moamoa",
+    "storage_bucket": "emp-moamoa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54991817035:android:7307ca7331e2a61661c0ce",
+        "android_client_info": {
+          "package_name": "com.javaproject.employinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54991817035-emrrsos1kmdcdil52krjhghdsjnbphfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETrPvr39A5xx1Ny_J5_euNJCmS1BLPYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54991817035-emrrsos1kmdcdil52krjhghdsjnbphfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
