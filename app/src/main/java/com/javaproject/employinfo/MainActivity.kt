@@ -9,9 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 
 class MainActivity : AppCompatActivity() {
+    var ai = "AI"
+    var frontend = "Frontend"
+    var backend = "Backend"
     var employType = "고용형태"
     var locaction = "지역별"
     var back = "뒤로가기"
+
+    var viewKeys = listOf<String>(ai, frontend, backend, employType, locaction)
 
     var selectedIndex: Int = 0;
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val view = intent.getStringExtra("view")
 
-        if(view == employType) setContentView(R.layout.activity_employ)
+        if(view == ai || view == frontend || view == backend) setContentView(R.layout.activity_type)
+        else if(view == employType) setContentView(R.layout.activity_employ)
         else if(view == locaction) setContentView(R.layout.activity_local)
         else setContentView(R.layout.activity_main)
 
@@ -49,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                         val textId = resources.getIdentifier("v"+(i+1)+"_text", "id", this.packageName)
                         val text = viewList[i].findViewById<TextView>(textId).text
 
-                        if(text.equals(employType) or text.equals(locaction)){
+                        if(viewKeys.contains(text)){
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("view", text)
                             startActivity(intent)
@@ -72,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
                         if(text.equals(back)){
                             finish()
-                        }else if(text.equals(employType) or text.equals(locaction)){
+                        }else if(viewKeys.contains(text)){
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("view", text)
                             startActivity(intent)
