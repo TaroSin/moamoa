@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     var locaction = "지역별"
     var back = "뒤로가기"
 
+    var fieldList = listOf<String>(ai, frontend, backend)
+    var empList = listOf<String>("정규직", "인턴")
+    var locList = listOf<String>("수도권", "전북권")
     var viewKeys = listOf<String>(ai, frontend, backend, employType, locaction)
 
     var selectedIndex: Int = 0;
@@ -23,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val view = intent.getStringExtra("view")
+        var field = intent.getStringExtra("filed")
+        var emp = intent.getStringExtra("emp")
+        var loc = intent.getStringExtra("loc")
 
         if(view == ai || view == frontend || view == backend) setContentView(R.layout.activity_type)
         else if(view == employType) setContentView(R.layout.activity_employ)
@@ -54,16 +60,23 @@ class MainActivity : AppCompatActivity() {
                     else{
                         val textId = resources.getIdentifier("v"+(i+1)+"_text", "id", this.packageName)
                         val text = viewList[i].findViewById<TextView>(textId).text
+                        var intent = Intent()
 
                         if(viewKeys.contains(text)){
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("view", text)
-                            startActivity(intent)
+                            intent = Intent(this, MainActivity::class.java)
                         }else{
-                            val intent = Intent(this, NewActivity::class.java)
-                            intent.putExtra("view", text)
-                            startActivity(intent)
+                            intent = Intent(this, NewActivity::class.java)
                         }
+
+                        intent.putExtra("view", text)
+                        if(fieldList.contains(text)) field = text as String?
+                        intent.putExtra("filed", field)
+                        if(empList.contains(text))  emp = text as String?
+                        intent.putExtra("emp", emp)
+                        if(locList.contains(text)) loc = text as String?
+                        intent.putExtra("loc", loc)
+
+                        startActivity(intent)
 
                         enterCheck=0;
                     }
@@ -72,40 +85,52 @@ class MainActivity : AppCompatActivity() {
                 viewList[i].setOnClickListener {
                     enterCheck=0
 
-                    if (selectedIndex == i){
+                    if(selectedIndex == i) {
                         val textId = resources.getIdentifier("v"+(i+1)+"_text", "id", this.packageName)
                         val text = viewList[i].findViewById<TextView>(textId).text
+                        var intent = Intent()
 
                         if(text.equals(back)){
                             finish()
-                        }else if(viewKeys.contains(text)){
-                            val intent = Intent(this, MainActivity::class.java)
+                        }else {
+                            if (viewKeys.contains(text)) {
+                                intent = Intent(this, MainActivity::class.java)
+
+                            } else {
+                                intent = Intent(this, NewActivity::class.java)
+                            }
+
                             intent.putExtra("view", text)
-                            startActivity(intent)
-                        }else{
-                            val intent = Intent(this, NewActivity::class.java)
-                            intent.putExtra("view", text)
+                            if (fieldList.contains(text)) field = text as String?
+                            intent.putExtra("filed", field)
+                            if (empList.contains(text)) emp = text as String?
+                            intent.putExtra("emp", emp)
+                            if (locList.contains(text)) loc = text as String?
+                            intent.putExtra("loc", loc)
+
                             startActivity(intent)
                         }
 
                         return@setOnClickListener
                     }
 
-                    val sFrom = resources.getIdentifier("s"+i, "id", this.packageName)
-                    val sTo = resources.getIdentifier("s"+(i+1), "id", this.packageName)
-                    motionLayout.setTransition(sFrom, sTo)
-                    motionLayout.transitionToEnd()
+                    if(selectedIndex == i+1 && selectedIndex<3){
+                        val sFrom = resources.getIdentifier("s"+(i+2), "id", this.packageName)
+                        val sTo = resources.getIdentifier("s"+(i+1), "id", this.packageName)
+                        motionLayout.setTransition(sFrom, sTo)
+                        motionLayout.transitionToEnd()
+                    }else{
+                        val sFrom = resources.getIdentifier("s"+i, "id", this.packageName)
+                        val sTo = resources.getIdentifier("s"+(i+1), "id", this.packageName)
+                        motionLayout.setTransition(sFrom, sTo)
+                        motionLayout.transitionToEnd()
+                    }
 
                     selectedIndex = i
+
                 }
             }
         }
 
     }
-    /*fun start(layoutFileId: Int) {
-        val intent = Intent(this, CarouselActivity::class.java).apply {
-            putExtra("layout_file_id", layoutFileId)
-        }
-        startActivity(intent)
-    }*/
 }

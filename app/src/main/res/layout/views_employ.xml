@@ -12,7 +12,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
         <TextView
             android:id="@+id/v1_text"
-            android:text="신입"
+            android:text="정규직"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_gravity="center"
             android:textColor="@android:color/background_light" android:textSize="24sp" android:textStyle="bold"/>

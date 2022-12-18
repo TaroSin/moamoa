@@ -20,33 +20,36 @@
         android:paddingTop="20dp">
 
         <TextView
-            android:id="@+id/title_price"
+            android:id="@+id/loclong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="@android:color/white"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            android:text="LOC"/>
 
         <TextView
-            android:id="@+id/title_time_label"
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:text="DATE"/>
 
         <TextView
             android:id="@+id/title_date_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/title_time_label"
+            android:layout_above="@id/date"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:text="기한"/>
 
 
     </RelativeLayout>
@@ -74,7 +77,7 @@
             android:src="@drawable/from_to_purple" />
 
         <TextView
-            android:id="@+id/title_from_address"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/title_from_to_dots"
@@ -85,13 +88,14 @@
             android:fadingEdge="horizontal"
             android:singleLine="true"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:text="Title"/>
 
         <ImageView
             android:id="@+id/title_from_to_dots_divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/title_from_address"
+            android:layout_below="@id/title"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/title_from_to_dots"
@@ -99,7 +103,7 @@
             android:src="@color/contentDividerLine" />
 
         <TextView
-            android:id="@+id/title_to_address"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title_from_to_dots_divider"
@@ -109,62 +113,66 @@
             android:fadingEdge="horizontal"
             android:singleLine="true"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:text="Name"/>
 
 
         <TextView
-            android:id="@+id/title_requests_count"
+            android:id="@+id/exp"
             style="@style/TitleBadgeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:text="EXP"/>
 
         <TextView
             style="@style/TitleBadgeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/title_requests_count"
-            android:layout_alignLeft="@id/title_requests_count"
-            android:layout_alignStart="@id/title_requests_count"
-            android:text="@string/requests_count_badge" />
+            android:layout_above="@id/exp"
+            android:layout_alignStart="@id/exp"
+            android:layout_alignLeft="@id/exp"
+            android:layout_marginBottom="1dp"
+            android:text="경력" />
 
         <TextView
-            android:id="@+id/title_weight"
+            android:id="@+id/edu"
             style="@style/TitleBadgeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="@string/weight_mock" />
+            android:text="EDU"/>
 
         <TextView
             style="@style/TitleBadgeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/title_weight"
-            android:layout_alignLeft="@id/title_weight"
-            android:layout_alignStart="@id/title_weight"
-            android:text="@string/weight_badge" />
+            android:layout_above="@id/edu"
+            android:layout_alignLeft="@id/edu"
+            android:layout_alignStart="@id/edu"
+            android:text="학력" />
 
         <TextView
-            android:id="@+id/title_pledge"
+            android:id="@+id/work"
             style="@style/TitleBadgeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:text="WORK"/>
 
         <TextView
             style="@style/TitleBadgeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/title_pledge"
-            android:layout_alignLeft="@id/title_pledge"
-            android:layout_alignStart="@id/title_pledge"
-            android:text="@string/pledge_badge" />
+            android:layout_above="@id/work"
+            android:layout_alignLeft="@id/work"
+            android:layout_alignStart="@id/work"
+            android:text="고용형태" />
 
     </RelativeLayout>
 </LinearLayout>
