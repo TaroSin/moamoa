@@ -11,6 +11,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
         <TextView
+            android:id="@+id/v1_text"
             android:text="수도권"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_gravity="center"
@@ -27,6 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
         <TextView
+            android:id="@+id/v2_text"
             android:text="전북권"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_gravity="center"
@@ -43,6 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
         <TextView
+            android:id="@+id/v3_text"
             android:text="뒤로가기"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_gravity="center"

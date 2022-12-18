@@ -20,7 +20,6 @@
         <activity android:name=".EmploActivity"/>
         <activity android:name=".LocalActivity"/>
         <activity android:name=".NewActivity"/>
-        <activity android:name=".InternActivity"/>
     </application>
 
 </manifest>

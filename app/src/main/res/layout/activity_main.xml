@@ -9,7 +9,6 @@
     app:layoutDescription="@xml/motion_scene_1"
     android:background="#2f3542">
 
-    <include layout="@layout/views"
-        android:id="@+id/views"/>
+    <include layout="@layout/views"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
